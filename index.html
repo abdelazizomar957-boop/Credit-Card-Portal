@@ -1,0 +1,751 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>نهضة مصر | بوابة الحوكمة المالية</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background: #f4f6f9;
+    color: #263445;
+    line-height: 1.8;
+}
+
+/* Header */
+
+header {
+    background: #17365d;
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-mark {
+    width: 45px;
+    height: 45px;
+    background: white;
+    color: #17365d;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.brand h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.brand small {
+    color: #dce7f3;
+    font-size: 12px;
+}
+
+.header-label {
+    font-size: 13px;
+    color: #e4edf7;
+}
+
+/* Main */
+
+.container {
+    max-width: 1000px;
+    margin: 35px auto;
+    padding: 0 16px;
+}
+
+.intro {
+    background: white;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+    border-top: 4px solid #c49a45;
+}
+
+.intro h1 {
+    color: #17365d;
+    font-size: 25px;
+    margin: 0 0 12px;
+}
+
+.intro p {
+    color: #64748b;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Progress */
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.progress {
+    height: 7px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #c49a45;
+    transition: .3s;
+}
+
+/* Sections */
+
+.form-section {
+    background: white;
+    padding: 28px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid #e7ebf0;
+    box-shadow: 0 3px 12px rgba(0,0,0,.035);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #e8edf2;
+    padding-bottom: 15px;
+    margin-bottom: 22px;
+}
+
+.section-number {
+    width: 36px;
+    height: 36px;
+    background: #eaf0f7;
+    color: #17365d;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+}
+
+.section-heading h2 {
+    font-size: 18px;
+    color: #17365d;
+    margin: 0;
+}
+
+.field {
+    margin-bottom: 22px;
+}
+
+.field > label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 9px;
+}
+
+.required {
+    color: #c0392b;
+}
+
+.hint {
+    color: #7b8794;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Inputs */
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d7dee7;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 14px;
+    background: #fff;
+    color: #263445;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #315b86;
+    box-shadow: 0 0 0 3px rgba(49,91,134,.09);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Checkbox and radio */
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+    background: #f8fafc;
+    border: 1px solid #e5eaf0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: normal;
+    transition: .2s;
+}
+
+.option:hover {
+    border-color: #9aafc5;
+    background: #f0f5fa;
+}
+
+.option:has(input:checked) {
+    background: #edf3fa;
+    border-color: #315b86;
+}
+
+.option input {
+    accent-color: #17365d;
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+/* Service cards */
+
+.service-card {
+    background: #f8fafc;
+    border: 1px solid #dce5ee;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: #17365d;
+    font-size: 15px;
+    margin-top: 0;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.service-grid .field {
+    margin-bottom: 8px;
+}
+
+.add-button {
+    background: #edf3fa;
+    color: #17365d;
+    border: 1px dashed #7892ae;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    width: 100%;
+}
+
+.remove-button {
+    background: #fff0f0;
+    color: #b42318;
+    border: 1px solid #f1cccc;
+    border-radius: 6px;
+    padding: 7px 13px;
+    cursor: pointer;
+    font-family: inherit;
+    margin-top: 12px;
+}
+
+/* Submit */
+
+.submit-area {
+    text-align: center;
+}
+
+.submit-button {
+    width: 100%;
+    background: #17365d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: #244d78;
+}
+
+footer {
+    text-align: center;
+    color: #7b8794;
+    font-size: 12px;
+    padding: 25px;
+}
+
+@media(max-width:650px) {
+    .options, .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section {
+        padding: 19px;
+    }
+
+    .intro h1 {
+        font-size: 20px;
+    }
+
+    .header-label {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="brand">
+        <div class="brand-mark">ن</div>
+        <div>
+            <h2>نهضة مصر للطباعة والنشر</h2>
+            <small>Nahdet Misr for Printing & Publishing</small>
+        </div>
+    </div>
+
+    <div class="header-label">
+        بوابة الحوكمة والرقابة المالية
+    </div>
+</header>
+
+<main class="container">
+
+    <div class="intro">
+        <h1>نموذج حصر وتقييم استخدامات البطاقات الائتمانية</h1>
+
+        <p>
+            يهدف النموذج إلى حصر الاستخدامات الفعلية والمتوقعة للبطاقات
+            الائتمانية وتحليل طبيعة الإنفاق والالتزامات المالية المرتبطة بها.
+        </p>
+
+        <p>
+            يرجى إدخال بيانات دقيقة لكل خدمة أو مورد يتم التعامل معه باستخدام البطاقة.
+            الحقول المحددة بعلامة <span class="required">*</span> إلزامية.
+        </p>
+    </div>
+
+    <div class="progress-info">
+        <span>استكمال النموذج</span>
+        <span id="progressText">0%</span>
+    </div>
+
+    <div class="progress">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+<form id="surveyForm">
+
+<!-- 1 -->
+
+<section class="form-section">
+
+<div class="section-heading">
+    <div class="section-number">1</div>
+    <h2>بيانات حامل البطاقة</h2>
+</div>
+
+<div class="field">
+    <label>البريد الإلكتروني <span class="required">*</span></label>
+    <input type="email" name="email" required placeholder="البريد الإلكتروني الوظيفي">
+</div>
+
+<div class="field">
+    <label>اسم حامل البطاقة <span class="required">*</span></label>
+    <input type="text" name="cardholder" required placeholder="الاسم بالكامل">
+</div>
+
+<div class="field">
+    <label>المسمى الوظيفي <span class="required">*</span></label>
+    <select name="jobTitle" required>
+        <option value="">اختر المسمى الوظيفي</option>
+        <option>رئيس القطاع التجاري للأضواء</option>
+        <option>مدير محفظة المنتجات</option>
+        <option>مدير العلاقات العامة</option>
+        <option>رئيس وحدة أعمال الثقافي والأطفال</option>
+        <option>مدير منتج</option>
+        <option>مدير مكتب رئيس مجلس الإدارة</option>
+        <option>المدير المالي</option>
+        <option>رئيس قطاع تكنولوجيا المعلومات</option>
+        <option>مدير البحث والتطوير</option>
+        <option>رئيس قطاع البرمجيات</option>
+        <option>رئيس محفظة المنتجات الدولية</option>
+        <option>أخرى</option>
+    </select>
+</div>
+
+</section>
+
+<!-- 2 -->
+
+<section class="form-section">
+
+<div class="section-heading">
+    <div class="section-number">2</div>
+    <h2>نطاق استخدام البطاقة والجهات المستفيدة</h2>
+</div>
+
+<div class="field">
+    <label>ما نطاق استخدام البطاقة؟ <span class="required">*</span></label>
+
+    <div class="options">
+        <label class="option"><input type="radio" name="scope" value="احتياجات حامل البطاقة" required>احتياجات حامل البطاقة الوظيفية</label>
+        <label class="option"><input type="radio" name="scope" value="الإدارة التابعة">الإدارة التابع لها حامل البطاقة</label>
+        <label class="option"><input type="radio" name="scope" value="إدارات أخرى">إدارات أخرى</label>
+        <label class="option"><input type="radio" name="scope" value="أكثر من إدارة">أكثر من إدارة</label>
+        <label class="option"><input type="radio" name="scope" value="الشركة ككل">الشركة ككل</label>
+    </div>
+</div>
+
+<div class="field">
+    <label>ما الإدارات أو الجهات المستفيدة؟</label>
+    <div class="hint">يمكن اختيار أكثر من إدارة.</div>
+
+    <div class="options">
+        <label class="option"><input type="checkbox" name="departments" value="الإدارة التابعة">الإدارة التابع لها حامل البطاقة</label>
+        <label class="option"><input type="checkbox" name="departments" value="التجارية للأضواء">الإدارة التجارية للأضواء</label>
+        <label class="option"><input type="checkbox" name="departments" value="العلاقات العامة">إدارة العلاقات العامة</label>
+        <label class="option"><input type="checkbox" name="departments" value="تكنولوجيا المعلومات">إدارة تكنولوجيا المعلومات</label>
+        <label class="option"><input type="checkbox" name="departments" value="البرمجيات">إدارة البرمجيات</label>
+        <label class="option"><input type="checkbox" name="departments" value="البحث والتطوير">إدارة البحث والتطوير</label>
+        <label class="option"><input type="checkbox" name="departments" value="المنتجات">إدارة المنتجات</label>
+        <label class="option"><input type="checkbox" name="departments" value="الثقافي والأطفال">إدارة الثقافي والأطفال</label>
+        <label class="option"><input type="checkbox" name="departments" value="مكتب رئيس مجلس الإدارة">مكتب رئيس مجلس الإدارة</label>
+        <label class="option"><input type="checkbox" name="departments" value="الإدارة المالية">الإدارة المالية</label>
+        <label class="option"><input type="checkbox" name="departments" value="الشركة ككل">الشركة بشكل عام</label>
+        <label class="option"><input type="checkbox" name="departments" value="إدارات أخرى">إدارات أخرى</label>
+    </div>
+</div>
+
+<div class="field">
+    <label>تفاصيل الجهات أو المشروعات المستفيدة</label>
+    <textarea name="beneficiaryDetails" placeholder="اذكر اسم الإدارة أو المشروع وطبيعة الخدمة المقدمة له"></textarea>
+</div>
+
+</section>
+
+<!-- 3 -->
+
+<section class="form-section">
+
+<div class="section-heading">
+    <div class="section-number">3</div>
+    <h2>أوجه الاستخدام الفعلية للبطاقة</h2>
+</div>
+
+<div class="field">
+    <label>حدد جميع أوجه الاستخدام خلال آخر 12 شهراً</label>
+    <div class="hint">يمكن اختيار أكثر من إجابة.</div>
+
+    <div class="options">
+        <label class="option"><input type="checkbox" name="usageTypes" value="شراء منتجات وخدمات">شراء منتجات أو خدمات</label>
+        <label class="option"><input type="checkbox" name="usageTypes" value="السفر والإقامة">السفر والإقامة والانتقالات</label>
+        <label class="option"><input type="checkbox" name="usageTypes" value="اشتراكات البرامج">اشتراكات وتراخيص البرامج</label>
+        <label class="option"><input type="checkbox" name="usageTypes" value="الذكاء الاصطناعي">خدمات الذكاء الاصطناعي</label>
+        <label class="option"><input type="checkbox" name="usageTypes" value="خدمات تقنية">خدمات تكنولوجيا المعلومات والاستضافة</label>
+        <label class="option"><input type="checkbox" name="usageTypes" value="الإعلانات">الإعلانات والحملات التسويقية</label>
+        <label class="option"><input type="checkbox" name="usageTypes" value="التصميم">خدمات التصميم والإنتاج الإبداعي</label>
+        <label class="option"><input type="checkbox" name="usageTypes" value="البحث والتطوير">مصروفات البحث والتطوير</label>
+        <label class="option"><input type="checkbox" name="usageTypes" value="الفعاليات">الفعاليات والمؤتمرات</label>
+        <label class="option"><input type="checkbox" name="usageTypes" value="رسوم حكومية">رسوم وخدمات حكومية أو إدارية</label>
+        <label class="option"><input type="checkbox" name="usageTypes" value="المشروعات">مدفوعات خاصة بالمشروعات</label>
+        <label class="option"><input type="checkbox" name="usageTypes" value="مستلزمات تشغيلية">أدوات ومستلزمات تشغيلية</label>
+    </div>
+</div>
+
+</section>
+
+<!-- 4 -->
+
+<section class="form-section">
+
+<div class="section-heading">
+    <div class="section-number">4</div>
+    <h2>تفاصيل الخدمات والموردين</h2>
+</div>
+
+<p class="hint">
+    سجل كل خدمة أو مورد بشكل مستقل. يمكنك إضافة عدد غير محدود من الخدمات.
+</p>
+
+<div id="servicesContainer"></div>
+
+<button type="button" class="add-button" onclick="addService()">
+    + إضافة خدمة أو مورد جديد
+</button>
+
+</section>
+
+<!-- 5 -->
+
+<section class="form-section">
+
+<div class="section-heading">
+    <div class="section-number">5</div>
+    <h2>فرص التعاقد وآليات السداد</h2>
+</div>
+
+<div class="field">
+    <label>هل يمكن تحويل التعامل إلى اتفاقية أو تعاقد مباشر؟</label>
+
+    <div class="options">
+        <label class="option"><input type="radio" name="contract" value="نعم">نعم، يمكن التعاقد مباشرة</label>
+        <label class="option"><input type="radio" name="contract" value="تجميع الاحتياجات">بشرط تجميع احتياجات الإدارات</label>
+        <label class="option"><input type="radio" name="contract" value="السداد المباشر">الخدمة تتطلب السداد المباشر بالبطاقة</label>
+        <label class="option"><input type="radio" name="contract" value="لمرة واحدة">التعامل لمرة واحدة</label>
+        <label class="option"><input type="radio" name="contract" value="غير معلوم">لا تتوفر معلومات كافية</label>
+    </div>
+</div>
+
+<div class="field">
+    <label>ما آلية السداد أو التعاقد الأنسب؟</label>
+
+    <div class="options">
+        <label class="option"><input type="radio" name="payment" value="اتفاقية سنوية">اتفاقية سنوية</label>
+        <label class="option"><input type="radio" name="payment" value="اتفاقية إطارية">اتفاقية إطارية وأوامر شراء</label>
+        <label class="option"><input type="radio" name="payment" value="البطاقة">الاستمرار باستخدام البطاقة</label>
+    </div>
+</div>
+
+<div class="field">
+    <label>هل توجد إدارات أخرى تستخدم نفس الخدمة أو المورد؟</label>
+    <div class="options">
+        <label class="option"><input type="radio" name="shared" value="نعم">نعم</label>
+        <label class="option"><input type="radio" name="shared" value="لا">لا</label>
+        <label class="option"><input type="radio" name="shared" value="لا أعلم">لا أعلم</label>
+    </div>
+</div>
+
+<div class="field">
+    <label>هل توجد بدائل لمقدم الخدمة أو وسائل سداد أخرى؟</label>
+    <div class="options">
+        <label class="option"><input type="radio" name="alternatives" value="نعم">نعم</label>
+        <label class="option"><input type="radio" name="alternatives" value="لا">لا</label>
+        <label class="option"><input type="radio" name="alternatives" value="لم تدرس">لم يتم دراسة البدائل</label>
+    </div>
+</div>
+
+<div class="field">
+    <label>تفاصيل البدائل أو فرص التعاقد</label>
+    <textarea name="alternativeDetails" placeholder="يرجى توضيح البدائل المتاحة"></textarea>
+</div>
+
+</section>
+
+<!-- 6 -->
+
+<section class="form-section">
+
+<div class="section-heading">
+    <div class="section-number">6</div>
+    <h2>المقترحات والتوصيات</h2>
+</div>
+
+<div class="field">
+    <label>هل لديك مقترحات لتحسين إدارة استخدام البطاقات أو خفض التكاليف؟</label>
+    <textarea name="recommendations" placeholder="اكتب مقترحاتك هنا..."></textarea>
+</div>
+
+</section>
+
+<div class="form-section submit-area">
+    <button type="submit" class="submit-button">
+        مراجعة وإرسال البيانات
+    </button>
+    <p class="hint">
+        يرجى التأكد من صحة البيانات قبل الإرسال.
+    </p>
+</div>
+
+</form>
+</main>
+
+<footer>
+    نهضة مصر للطباعة والنشر
+    <br>
+    بوابة الحوكمة والرقابة المالية
+</footer>
+
+<script>
+
+// إنشاء أول بطاقة خدمة تلقائياً
+
+let serviceNumber = 0;
+
+function addService() {
+    serviceNumber++;
+
+    const card = document.createElement("div");
+    card.className = "service-card";
+
+    card.innerHTML = `
+        <h3>الخدمة أو المورد رقم ${serviceNumber}</h3>
+
+        <div class="service-grid">
+
+            <div class="field">
+                <label>اسم الخدمة أو المنتج</label>
+                <input type="text" name="serviceName[]" placeholder="مثال: Microsoft 365">
+            </div>
+
+            <div class="field">
+                <label>اسم المورد</label>
+                <input type="text" name="supplier[]" placeholder="اسم مقدم الخدمة">
+            </div>
+
+            <div class="field">
+                <label>الغرض من الاستخدام</label>
+                <input type="text" name="purpose[]" placeholder="الغرض من الخدمة">
+            </div>
+
+            <div class="field">
+                <label>الإدارة المستفيدة</label>
+                <input type="text" name="beneficiary[]" placeholder="اسم الإدارة أو المشروع">
+            </div>
+
+            <div class="field">
+                <label>قيمة المعاملة</label>
+                <input type="number" name="amount[]" min="0" step="0.01" placeholder="المبلغ">
+            </div>
+
+            <div class="field">
+                <label>العملة</label>
+                <select name="currency[]">
+                    <option value="">اختر العملة</option>
+                    <option>الجنيه المصري EGP</option>
+                    <option>الدولار الأمريكي USD</option>
+                    <option>اليورو EUR</option>
+                    <option>أخرى</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>دورية السداد</label>
+                <select name="frequency[]">
+                    <option value="">اختر الدورية</option>
+                    <option>يومي</option>
+                    <option>أسبوعي</option>
+                    <option>شهري</option>
+                    <option>ربع سنوي</option>
+                    <option>سنوي</option>
+                    <option>غير دوري</option>
+                    <option>لمرة واحدة</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>طبيعة التعامل</label>
+                <select name="location[]">
+                    <option value="">اختر نوع التعامل</option>
+                    <option>محلي</option>
+                    <option>دولي</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button type="button" class="remove-button"
+            onclick="this.parentElement.remove()">
+            حذف الخدمة
+        </button>
+    `;
+
+    document.getElementById("servicesContainer").appendChild(card);
+}
+
+// تحديث مؤشر التقدم
+
+function updateProgress() {
+    const form = document.getElementById("surveyForm");
+    const required = Array.from(form.querySelectorAll("[required]"));
+
+    const completed = required.filter(field => {
+        if (field.type === "radio") {
+            return form.querySelector(
+                'input[name="' + field.name + '"]:checked'
+            ) !== null;
+        }
+        return field.value.trim() !== "";
+    });
+
+    const percent = Math.round(
+        completed.length / required.length * 100
+    );
+
+    document.getElementById("progressFill").style.width = percent + "%";
+    document.getElementById("progressText").textContent = percent + "%";
+}
+
+document.getElementById("surveyForm").addEventListener("input", updateProgress);
+document.getElementById("surveyForm").addEventListener("change", updateProgress);
+
+// رسالة اختبار الإرسال
+
+document.getElementById("surveyForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    alert(
+        "اكتمل إدخال البيانات بنجاح من ناحية النموذج.\n\n" +
+        "هذه نسخة تجريبية؛ لم يتم حفظ البيانات على خادم أو قاعدة بيانات حتى الآن."
+    );
+});
+
+// إنشاء أول خدمة
+
+addService();
+
+</script>
+
+</body>
+</html>
